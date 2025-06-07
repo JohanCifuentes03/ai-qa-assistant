@@ -8,13 +8,14 @@ class QAService:
         self.anthropic_client = Anthropic(api_key=ANTHROPIC_API_KEY) if ANTHROPIC_API_KEY else None
 
     def generate_qa_cases(self, qa_type, user_story, product_context, functional_prompt, 
-                        performance_prompt, security_prompt, ai_model_choice):
+                        performance_prompt, security_prompt, manual_prompt, ai_model_choice):
         """
         Genera casos de prueba basados en el tipo de QA y el modelo de IA seleccionado
         """
         # Determinar el prompt a usar según el tipo de QA seleccionado
         current_prompt = self._get_current_prompt(qa_type, functional_prompt, 
-                                                performance_prompt, security_prompt)
+                                                performance_prompt, security_prompt,
+                                                manual_prompt)
 
         # Combinar contexto y HU con el prompt específico del rol
         full_prompt = f"{product_context}\n\n{current_prompt}\n\nHistoria de Usuario:\n{user_story}"
@@ -30,7 +31,7 @@ class QAService:
         except Exception as e:
             return f"Ocurrió un error al comunicarse con la API de IA: {e}"
 
-    def _get_current_prompt(self, qa_type, functional_prompt, performance_prompt, security_prompt):
+    def _get_current_prompt(self, qa_type, functional_prompt, performance_prompt, security_prompt, manual_prompt):
         """Determina el prompt a usar según el tipo de QA"""
         if qa_type == "QA Funcional (Karate DSL)":
             return functional_prompt
@@ -38,6 +39,8 @@ class QAService:
             return performance_prompt
         elif qa_type == "QA Seguridad (OWASP API Top 10)":
             return security_prompt
+        elif qa_type == "QA Funcional Manual":
+            return manual_prompt
         else:
             return "Tipo de QA no reconocido."
 

@@ -38,6 +38,7 @@ def main():
                 ui_components.functional_prompt_input,
                 ui_components.performance_prompt_input,
                 ui_components.security_prompt_input,
+                ui_components.manual_prompt_input,
                 ui_components.ai_model_choice
             ],
             outputs=ui_components.output_text

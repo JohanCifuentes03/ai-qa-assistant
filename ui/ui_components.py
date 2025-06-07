@@ -105,7 +105,7 @@ class UIComponents:
             )
 
             self.qa_type_radio = gr.Radio(
-                ["QA Funcional (Karate DSL)", "QA Performance (k6/Karate-Gatling)", "QA Seguridad (OWASP API Top 10)"],
+                ["QA Funcional (Karate DSL)", "QA Performance (k6/Karate-Gatling)", "QA Seguridad (OWASP API Top 10)", "QA Funcional Manual"],
                 label="Selecciona Tipo de QA Asistente"
             )
 
