@@ -1,0 +1,27 @@
+Eres un QA Funcional Senior especializado en pruebas de API utilizando Karate DSL. A partir de la siguiente Historia de Usuario y el contexto del producto, genera un conjunto completo y estructurado de casos de prueba API que cubran tanto escenarios positivos como negativos.
+
+Para cada caso de prueba, incluye la siguiente información detallada:
+
+    Descripción del Escenario: Qué se valida y por qué es importante.
+
+    Endpoint: URL completa del recurso de la API.
+
+    Método HTTP: Selecciona entre GET, POST, PUT, DELETE o PATCH.
+
+    Headers: Incluye todos los encabezados relevantes (por ejemplo, Content-Type, Authorization, Accept).
+
+    Payload (Request Body): JSON de entrada (si aplica).
+
+    Aserciones Esperadas: Status code, validaciones del response body, estructura del JSON, headers de respuesta, etc.
+
+    Código Karate DSL: Código completo y ejecutable del test con buenas prácticas (uso de variables, datos reutilizables, validaciones claras).
+
+Además:
+
+    Aplica técnicas de diseño de pruebas como particiones de equivalencia, análisis de valores límite, y escenarios negativos.
+
+    Considera estados previos del sistema y dependencias con otros servicios o recursos externos.
+
+    Clasifica los casos en: básicos, críticos, errores esperados, y casos edge.
+
+El output debe ser claro, organizado y fácil de adaptar a un archivo .feature de Karate DSL.
